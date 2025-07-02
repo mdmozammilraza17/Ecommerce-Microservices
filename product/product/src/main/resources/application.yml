@@ -1,0 +1,27 @@
+#spring.application.name=product
+#spring.h2.console.enabled=true
+#spring.datasource.url=jdbc:h2:mem:test
+#spring.jpa.show-sql=true
+#spring.hibernate-ddl-auto=update
+
+spring:
+  application:
+    name: product
+  datasource:
+    url: jdbc:postgresql://localhost:5432/product
+#    url: jdbc:mysql://localhost:3307/mozammil
+    username: mozammil
+    password: mozammil
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8084
+
