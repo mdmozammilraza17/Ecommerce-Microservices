@@ -10,5 +10,3 @@ public class UserApplication {
 		SpringApplication.run(UserApplication.class, args);
 	}
 }
-
-// Mozammil Raza - Mozammil Dev Branch
