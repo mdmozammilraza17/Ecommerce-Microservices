@@ -5,8 +5,8 @@ services:
     container_name: postgres_container
     image: postgres:14
     environment:
-      POSTGRES_USER: embarkx
-      POSTGRES_PASSWORD: embarkx
+      POSTGRES_USER: mozammil
+      POSTGRES_PASSWORD: mozammil
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
@@ -31,9 +31,24 @@ services:
       - backend
     restart: unless-stopped
 
+  mongo:
+    container_name: mongodb_container
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo_user
+      MONGO_INITDB_ROOT_PASSWORD: mongo_pass
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - backend
+    restart: unless-stopped
+
 volumes:
   postgres:
   pgadmin:
+  mongodb_data:
 
 networks:
   backend:
