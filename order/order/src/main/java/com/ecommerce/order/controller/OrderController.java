@@ -18,7 +18,7 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<OrderResponse> createOrder (
-            @RequestHeader ("X-User_ID") String userId
+            @RequestHeader ("X-User-ID") String userId
             )
     {
         return orderService.createOrder(userId)

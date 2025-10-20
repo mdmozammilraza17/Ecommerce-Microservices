@@ -18,7 +18,7 @@ public class CartController {
     private final CartService cartService;
 
     @PostMapping
-    public ResponseEntity<String> addToCart (@RequestHeader ("X-User_ID") String userId, @RequestBody CartItemRequest request)
+    public ResponseEntity<String> addToCart (@RequestHeader ("X-User-ID") String userId, @RequestBody CartItemRequest request)
     {
         if (!cartService.addToCart(userId, request))
         {

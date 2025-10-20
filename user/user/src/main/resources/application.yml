@@ -1,12 +1,10 @@
 spring:
   application:
-    name: user
+    name: user-service
   data:
     mongodb:
-      uri: mongodb://mozammil:mozammil@localhost:27017/ecom_user?authSource=admin
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      uri: mongodb://localhost:27017/ecom_user
+      database: ecom_user
 
 server:
-  port: 8085
+  port: 8082

@@ -5,23 +5,20 @@
 #spring.hibernate-ddl-auto=update
 
 spring:
-  application:
-    name: product
   datasource:
-    url: jdbc:postgresql://localhost:5432/product
-#    url: jdbc:mysql://localhost:3307/mozammil
+    url: jdbc:mysql://localhost:3307/product
     username: mozammil
     password: mozammil
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
-    database: postgresql
+    database: MYSQL
     show-sql: true
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    properties:
-      hibernate:
-        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
 
 server:
-  port: 8084
+  port: 8081
+
 

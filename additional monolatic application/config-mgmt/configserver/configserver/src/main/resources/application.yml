@@ -1,0 +1,13 @@
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mdmozammilraza17/app-configuration
+          username: mdmozammilraza17
+          password: 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
+server:
+  port: 8888

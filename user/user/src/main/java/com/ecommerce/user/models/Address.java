@@ -1,16 +1,15 @@
 package com.ecommerce.user.models;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @NoArgsConstructor
-@Entity
-@Table(name = "addresses")
+@Document(collection = "address")
 public class Address {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String street;
     private String city;
