@@ -18,5 +18,3 @@ public class FeignController {
         return providerFeignClient.getInstanceInfo();
     }
 }
-
-// Md Shahid Sheikh - Jamtara
