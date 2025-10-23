@@ -34,6 +34,16 @@ public class ProductController {
 
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity <ProductResponse> getProductById(
+            @PathVariable String id){ {
+        return productService.getAllProductById(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(()-> ResponseEntity.notFound().build());
+    }
+
+    }
+
     @PutMapping ("/{id}")
     public ResponseEntity <ProductResponse> createProduct(
             @PathVariable Long id,
