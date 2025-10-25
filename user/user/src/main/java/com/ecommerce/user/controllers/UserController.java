@@ -26,9 +26,9 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    private ResponseEntity<UserResponse> getUser (@PathVariable Long id)
+    private ResponseEntity<UserResponse> getUser (@PathVariable String id)
     {
-        return userService.fetchUser(String.valueOf(id))
+        return userService.fetchUser(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(()-> ResponseEntity.notFound().build());
     }

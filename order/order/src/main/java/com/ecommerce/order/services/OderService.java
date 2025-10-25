@@ -23,7 +23,7 @@ public class OderService {
 
     public Optional<OrderResponse> createOrder(String userId) {
         // Validate for cart items
-        List<CartItem> cartItems =  cartService.getCart(Long.valueOf(userId));
+        List<CartItem> cartItems =  cartService.getCart(userId);
         if (cartItems.isEmpty())
         {
             return Optional.empty();
@@ -62,7 +62,7 @@ public class OderService {
         Order savedOrder = orderRepository.save(order);
 
         // Clear the cart
-        cartService.clearCart(Long.valueOf(userId));
+        cartService.clearCart(userId);
 
         return Optional.of(mapToOrderResponse(savedOrder));
     }
