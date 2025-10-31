@@ -34,12 +34,6 @@ public class CartService {
             return false;
 
 
-//        Optional<User> userOpt = userRepository.findById(Long.valueOf(userId));
-//        if (userOpt.isEmpty())
-//            return false;
-//
-//        User user = userOpt.get();
-
         CartItem existingCartItem = cartItemRepository.findByUserIdAndProductId(userId, Long.valueOf(request.getProductId()));
 
         if (existingCartItem != null)

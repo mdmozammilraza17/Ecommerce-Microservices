@@ -6,7 +6,6 @@ services:
     image: mysql:8.1
     environment:
       MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: product
       MYSQL_USER: mozammil
       MYSQL_PASSWORD: mozammil
       TZ: Asia/Kolkata
@@ -14,6 +13,7 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d
     networks:
       - backend
     restart: unless-stopped

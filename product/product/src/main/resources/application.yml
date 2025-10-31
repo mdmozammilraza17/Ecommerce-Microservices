@@ -24,6 +24,12 @@ spring:
 server:
   port: 8081
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 eureka:
   client:
     serviceUrl:
@@ -32,3 +38,10 @@ eureka:
     fetch-registry: true
 
 
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      max-history: 7
