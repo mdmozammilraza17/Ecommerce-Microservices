@@ -1,7 +1,7 @@
 package com.ecommerce.order.controller;
 
 import com.ecommerce.order.dtos.OrderResponse;
-import com.ecommerce.order.services.OderService;
+import com.ecommerce.order.services.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping ("/api/orders")
 public class OrderController {
-    private final OderService orderService;
+    private final OrderService orderService;
 
     @PostMapping
     public ResponseEntity<OrderResponse> createOrder (
