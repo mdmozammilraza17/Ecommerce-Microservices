@@ -33,6 +33,20 @@ services:
       - backend
     restart: unless-stopped
 
+  rabbitmq:
+    container_name: rabbitmq_container
+    image: rabbitmq:4-management   # UI + management version
+    environment:
+      RABBITMQ_DEFAULT_USER: mozammil
+      RABBITMQ_DEFAULT_PASS: mozammil
+      TZ: Asia/Kolkata
+    ports:
+      - "5672:5672"     # Application port
+      - "15672:15672"   # RabbitMQ dashboard
+    networks:
+      - backend
+    restart: unless-stopped
+
 volumes:
   mysql_data:
   mongo_data:
