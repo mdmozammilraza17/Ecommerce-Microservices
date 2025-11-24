@@ -10,10 +10,12 @@ spring:
 
   #RabbitMQ configuration
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: mozammil
-    password: mozammil
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:mozammil}
+    password: ${RABBITMQ_PASSWORD:mozammil}
+    virtual-host: ${RABBITMQ_VHOST:/}
+    connection-timeout: 30000
 
   jpa:
     database: MYSQL
@@ -89,7 +91,3 @@ resilience4j:
         timeout-duration: 0
         limit-refresh-period: 4s
         limit-for-period: 2
-
-
-
-

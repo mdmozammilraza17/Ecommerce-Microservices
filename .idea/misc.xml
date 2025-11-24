@@ -12,12 +12,9 @@
         <option value="$PROJECT_DIR$/eureka/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/notification/notification/pom.xml" />
+        <option value="$PROJECT_DIR$/additional monolatic application/kafka/producer/producer/pom.xml" />
+        <option value="$PROJECT_DIR$/additional monolatic application/kafka/consumer/consumer/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/eureka/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="openjdk-24" project-jdk-type="JavaSDK">
