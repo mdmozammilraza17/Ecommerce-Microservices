@@ -20,4 +20,10 @@ public class KafkaProducerStreams {
     }
 
 
+    @Bean
+    public Supplier<String> sendRiderStatus() {
+        return () -> "RIDER_001_ON_TRIP";
+    }
+
+
 }
