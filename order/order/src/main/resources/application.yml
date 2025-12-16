@@ -15,20 +15,24 @@ spring:
           destination: order.exchange
           content-type: application/json
 
-      rabbit:
-        bindings:
-          createOrder-out-0:
-            producer:
-              routing-key-expression: '''order.tracking'''
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+#      rabbit:
+#        bindings:
+#          createOrder-out-0:
+#            producer:
+#              routing-key-expression: '''order.tracking'''
 
   #RabbitMQ configuration
-  rabbitmq:
-    host: ${RABBITMQ_HOST:localhost}
-    port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USERNAME:mozammil}
-    password: ${RABBITMQ_PASSWORD:mozammil}
-    virtual-host: ${RABBITMQ_VHOST:/}
-    connection-timeout: 30000
+#  rabbitmq:
+#    host: ${RABBITMQ_HOST:localhost}
+#    port: ${RABBITMQ_PORT:5672}
+#    username: ${RABBITMQ_USERNAME:mozammil}
+#    password: ${RABBITMQ_PASSWORD:mozammil}
+#    virtual-host: ${RABBITMQ_VHOST:/}
+#    connection-timeout: 30000
 
   jpa:
     database: MYSQL

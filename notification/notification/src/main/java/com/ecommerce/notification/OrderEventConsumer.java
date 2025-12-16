@@ -4,7 +4,7 @@ package com.ecommerce.notification;
 import com.ecommerce.notification.payload.OrderCreatedEvent;
 import com.ecommerce.notification.payload.OrderStatus;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+//import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
@@ -14,24 +14,24 @@ import java.util.function.Consumer;
 @Slf4j
 public class OrderEventConsumer {
 
-    @RabbitListener(queues = "${rabbitmq.queue.name}")
-    public void handleOrderEvent (OrderCreatedEvent orderEvent)
-    {
-//        System.out.println("Received Order Event: "+ orderEvent);
+////    @RabbitListener(queues = "${rabbitmq.queue.name}")
+////    public void handleOrderEvent (OrderCreatedEvent orderEvent)
+//    {
+////        System.out.println("Received Order Event: "+ orderEvent);
+////
+////        long orderId = Long.valueOf(orderEvent.getOrderId());
+////        OrderStatus orderStatus = orderEvent.getStatus();
+////
+////        System.out.println("Order ID: " + orderId);
+////        System.out.println("Order Status: " + orderStatus);
+////
+////        // Update Database
+////        // Send Notification
+////        // Send Emails
+////        // Generate Invoice
+////        // Send Seller Notification
 //
-//        long orderId = Long.valueOf(orderEvent.getOrderId());
-//        OrderStatus orderStatus = orderEvent.getStatus();
-//
-//        System.out.println("Order ID: " + orderId);
-//        System.out.println("Order Status: " + orderStatus);
-//
-//        // Update Database
-//        // Send Notification
-//        // Send Emails
-//        // Generate Invoice
-//        // Send Seller Notification
-
-    }
+//    }
 
     @Bean
     public Consumer<OrderCreatedEvent> orderCreated ()
